@@ -6,7 +6,7 @@ const postSchema = new Schema({
     likes:{type:Number, default:0},
     description:{type:String, required:true},
     PostImage:{type:String, required:true},
-    date:{type:Date, required:true}
+    date:{type:Date, default:()=>Date.now()}
 })
 
 const Post = mongoose.model('posts',postSchema)
