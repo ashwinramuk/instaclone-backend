@@ -1,7 +1,8 @@
 const app = require("./app.js")
 const mongoose = require('mongoose')
+require("dotenv").config();
 
-mongoose.connect('mongodb+srv://ashwinramuk:ashwinramuk@posts.hsqw5aq.mongodb.net/?retryWrites=true&w=majority',()=>{console.log("Database connection successfull")})
+mongoose.connect(process.env.MONGODB_URI,()=>{console.log("Database connection successfull")})
 
 
-app.listen('8080',()=>{console.log("server is connected")})
+app.listen(process.env.PORT||8080,()=>{console.log("server is connected")})
